@@ -4,9 +4,9 @@ import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 const Header = () => {
   return (
-    <div className="container">
+    <div className="bg-light">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+        <div className="container">
           <a className="navbar-brand fw-bold">BD NM FoodValley</a>
           <button
             className="navbar-toggler"
