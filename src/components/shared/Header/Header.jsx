@@ -1,13 +1,13 @@
 import React from "react";
-
+import { Link, NavLink } from "react-router-dom";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 const Header = () => {
   return (
-    <div>
+    <div className="container">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Navbar
-          </a>
+          <a className="navbar-brand fw-bold">BD NM FoodValley</a>
           <button
             className="navbar-toggler"
             type="button"
@@ -20,52 +20,28 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav m-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink className="nav-link " aria-current="page" to="/">
                   Home
-                </a>
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
+              <li className="nav-item ">
+                <NavLink className="nav-link" to="/blog">
+                  Blog
+                </NavLink>
               </li>
             </ul>
+            <div>
+              <img  data-tooltip-id="my-tooltip"
+                data-tooltip-content="Nieem hossen"
+                style={{ width: "44px", height: "44px" }}
+                className="rounded-circle"
+                src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt=""
+              />
+              <Tooltip id="my-tooltip" />
+            </div>
           </div>
         </div>
       </nav>
