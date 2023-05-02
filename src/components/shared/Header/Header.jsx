@@ -4,8 +4,16 @@ import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 const Header = () => {
-  const user =  useContext(AuthContext);
+  const {user, logOut} =  useContext(AuthContext);
   console.log(user);
+
+  const logOutHandler = () =>{
+    logOut()
+    .then(()=>{})
+    .then(error=>{
+      console.log(error.message);
+    })
+  }
   return (
     <div className="bg-light">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -36,15 +44,18 @@ const Header = () => {
               </li>
             </ul>
             <div>
-              <img  data-tooltip-id="my-tooltip"
-                data-tooltip-content="Nieem hossen"
+              {
+                user ? <>  <img  data-tooltip-id="my-tooltip"
+                data-tooltip-content={user.displayName ? user.displayName: "No Name"}
                 style={{ width: "44px", height: "44px" }}
                 className="rounded-circle"
-                src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                src={user.photoURL ? user.photoURL : 'https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'}
                 alt=""
               />
-              <Tooltip id="my-tooltip" />
-              <Link to='/login' className="btn btn-info ms-2">LogIn</Link>
+              <Tooltip id="my-tooltip" /> <button onClick={logOutHandler} className="btn btn-primary">Log Out</button> </> : <Link to='/login' className="btn btn-info ms-2">LogIn</Link>
+              }
+             
+              
             </div>
           </div>
         </div>

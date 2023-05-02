@@ -1,11 +1,11 @@
-import React, { createContext } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import app from '../FireBase/firebase.config';
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({children}) => {
 const auth = getAuth(app)
-    const name = 'nieem'
+    const [user , setUser] =  useState(null);
 
     // register user
     const createUser =(email, pass)=>{
@@ -36,13 +36,31 @@ const auth = getAuth(app)
      const loginWithGithub = () =>{
        return signInWithPopup(auth, provider)
     }
+
+    // current user  observer 
+
+    useEffect(()=>{
+      const unsubscribe =   onAuthStateChanged(auth, (loggedUser) =>{
+            setUser(loggedUser)
+    })
+    return () =>{
+        unsubscribe()
+    }
+    },[])
+       
+    // log out
+
+    const logOut = () =>{
+      return  signOut(auth);
+    }
     const authInfo ={
-        name,
+        user,
         createUser,
         userProfile,
         signInUser,
         loginWithGoogle,
-        loginWithGithub
+        loginWithGithub,
+        logOut
     }
     return (
         
