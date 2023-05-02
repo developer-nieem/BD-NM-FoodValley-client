@@ -41,6 +41,7 @@ const Header = () => {
                 alt=""
               />
               <Tooltip id="my-tooltip" />
+              <Link to='/login' className="btn btn-info ms-2">LogIn</Link>
             </div>
           </div>
         </div>
