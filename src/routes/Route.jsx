@@ -7,6 +7,7 @@ import Register from "../components/Pages/Register";
 import Blog from "../components/Pages/Blog";
 import Chef from "../components/ChefDetails/Chef";
 import ChefViewDetails from "../components/ChefDetails/ChefViewDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/chef/:id',
-        element:<ChefViewDetails></ChefViewDetails>,
+        element:<PrivateRoute><ChefViewDetails></ChefViewDetails></PrivateRoute>,
         loader: ({params}) => fetch(`https://assignment10-server-developer-nieem.vercel.app/chef/${params.id}`)
       }
     ],

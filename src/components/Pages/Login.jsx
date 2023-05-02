@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
+    const navigate = useNavigate()
 const {signInUser, loginWithGoogle, loginWithGithub} = useContext(AuthContext);
+const location =  useLocation();
+const from =  location.state?.from?.pathname || '/'
 
 const [showError , setShowError] =  useState('')
     const loginHandler= event =>{
@@ -22,6 +25,7 @@ const [showError , setShowError] =  useState('')
             const user =  result.user;
             console.log(user);
             setShowError('');
+            navigate(from , {replace:true})
            
             
         })
@@ -37,6 +41,7 @@ const [showError , setShowError] =  useState('')
         loginWithGoogle()
         .then(result =>{
             const user =  result.user;
+            navigate(from , {replace:true})
             console.log(user);
         })
         .catch(error=>{
@@ -50,6 +55,7 @@ const [showError , setShowError] =  useState('')
         loginWithGithub()
         .then(result =>{
             const user =  result.user;
+            navigate(from , {replace:true})
             console.log(user);
         })
         .catch(error=>{
