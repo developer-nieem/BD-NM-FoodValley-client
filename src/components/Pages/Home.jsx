@@ -17,7 +17,7 @@ const Home = () => {
               <button className="btn btn-warning">Order Now</button>
             </div>
             <div className="col-md-8">
-              <div>
+              <div className="text-end">
                 <img
                   className="img-fluid mt-5"
                   src="https://dilicious-demo.pbminfotech.com/burger/wp-content/uploads/sites/3/2023/03/burger-01.png"
@@ -33,7 +33,7 @@ const Home = () => {
       <div className="container my-4">
         <div className="row">
           <div className="col-md-4">
-            <div className="card text-bg-dark">
+            <div className="card text-bg-dark my-2">
               <img
                 style={{ height: "300px" }}
                 src="https://images.unsplash.com/photo-1559528896-c5310744cce8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"

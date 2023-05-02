@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
 
     const {createUser, userProfile} = useContext(AuthContext);
+    const [showError , setShowError] =  useState('');
 
     const registerHandler= event =>{
         event.preventDefault();
@@ -14,13 +15,14 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const pass = form.password.value;
+       
         console.log(name, photo, email,pass );
         form.reset()
         createUser(email, pass)
         .then(result =>{
             const user =  result.user;
             console.log(user);
-            
+            setShowError('')
             userProfile(name, photo)
             .then(()=>{})
             .catch(error=>{
@@ -29,6 +31,7 @@ const Register = () => {
         })
         .catch(error=>{
             console.log(error.message);
+            setShowError(error.message.slice(9,500))
         })
     }
     return (
@@ -87,7 +90,7 @@ const Register = () => {
             required
           />
         </div>
-
+                <p>{showError}</p>
         <button type="submit" className="btn btn-primary">
           Register
         </button>
