@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCalendarAlt, FaHamburger, FaThumbsUp, FaUser } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ChefDetails = ({ chefItem }) => {
     const {id, chef_picture, chef_name, years_of_experience, num_of_recipes, likes} = chefItem
@@ -13,7 +14,7 @@ const ChefDetails = ({ chefItem }) => {
             <p className="pt-2">
              <div className="d-flex justify-content-between">
                 <div>
-                    <FaCalendarAlt></FaCalendarAlt> Experience: {years_of_experience}
+                    <FaCalendarAlt></FaCalendarAlt> Experience: {years_of_experience}y
                 </div>
                 <div>
                     <FaHamburger></FaHamburger> Recipes: {num_of_recipes}
@@ -23,7 +24,7 @@ const ChefDetails = ({ chefItem }) => {
             </div>
              </div>
              <div className="pt-5 text-center">
-                <button className="btn btn-primary w-100"> View Recipes</button>
+                <Link to={`/chef/${id}`} className="btn btn-primary w-100"> View Recipes</Link>
             </div>
             </p>
           </div>
