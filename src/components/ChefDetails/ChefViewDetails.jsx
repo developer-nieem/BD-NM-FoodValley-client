@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import { FaRegBookmark } from "react-icons/fa";
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ChefViewDetails = () => {
   const chefItem = useLoaderData();
+  const [disabeld, setDisabeld] =  useState(false)
   const {
     id,
     chef_picture,
@@ -14,6 +17,11 @@ const ChefViewDetails = () => {
     likes,
     chef_bio,
   } = chefItem;
+
+  const favHandlar = (event) =>{
+    toast("Added Favorite !");
+    event.target.disabled = true;
+  }
   return (
     <div className="container">
       <div className="row">
@@ -81,7 +89,8 @@ const ChefViewDetails = () => {
                       <b>Rating: </b>
                       <Rating style={{ maxWidth: 100 }} value={recipe.rating} readOnly /> {recipe.rating}
                     </small>
-                    <button className="btn btn-dark"> <FaRegBookmark></FaRegBookmark> </button>
+                    <button onClick={favHandlar} className="btn btn-dark" > <FaRegBookmark></FaRegBookmark> </button>
+                    
                   </div>
                 </div>
               </div>
