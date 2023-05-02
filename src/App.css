@@ -6,3 +6,11 @@
 .active{
     font-weight: bold !important;
 }
+
+@media (max-width: 768px) {
+    /* Styles for screens smaller than 768px */
+    .mobile-fluid{
+      width: 100% !important;
+    }
+  }
+  

@@ -9,7 +9,7 @@ const ErrorPage = () => {
     return (
         <>
         <Header></Header>
-        <div className='w-25 m-auto my-5'>
+        <div className='mobile-fluid  m-auto my-5 ' style={{width:'320px'}}>
             <div className="card text-center" >
   <img  src="https://www.kindpng.com/picc/m/255-2550104_404-error-page-png-transparent-png.png" className="card-img-top img-fluid" alt="..."/>
   <div className="card-body text-center">

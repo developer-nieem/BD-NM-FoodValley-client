@@ -89,7 +89,7 @@ const ChefViewDetails = () => {
                       <b>Rating: </b>
                       <Rating style={{ maxWidth: 100 }} value={recipe.rating} readOnly /> {recipe.rating}
                     </small>
-                    <button onClick={favHandlar} className="btn btn-dark" > <FaRegBookmark></FaRegBookmark> </button>
+                    <button onClick={favHandlar} className="btn btn-dark" > Favorite  </button>
                     
                   </div>
                 </div>

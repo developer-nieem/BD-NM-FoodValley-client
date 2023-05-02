@@ -57,8 +57,8 @@ const [showError , setShowError] =  useState('')
         })
     }
   return (
-    <div className="w-25 mx-auto ">
-      <div className="card p-4 my-5">
+    <div className="mobile-fluid   mx-auto " style={{width:'320px'}}>
+      <div className="card p-4 my-5 mx-2">
       <form onSubmit={loginHandler}>
         <div className="mb-3">
           <label for="exampleInputEmail1" className="form-label">
