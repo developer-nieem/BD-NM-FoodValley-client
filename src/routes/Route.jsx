@@ -5,6 +5,7 @@ import ErrorPage from "../components/Pages/ErrorPage";
 import Login from "../components/Pages/Login";
 import Register from "../components/Pages/Register";
 import Blog from "../components/Pages/Blog";
+import Chef from "../components/ChefDetails/Chef";
 
 const router = createBrowserRouter([
   {

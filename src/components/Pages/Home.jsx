@@ -1,4 +1,5 @@
 import React from "react";
+import Chef from "../ChefDetails/Chef";
 
 const Home = () => {
   return (
@@ -96,7 +97,11 @@ const Home = () => {
       </div>
 
       {/* chef section */}
-
+            <div className="container my-5">
+                <h2 className="text-center mt-5 mb-3">Our Chef information</h2>
+                <Chef></Chef>
+            </div>
+           
       {/* APP download section start here */}
       <div className="bg-danger">
         <div className="container py-5">
