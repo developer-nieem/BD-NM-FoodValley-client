@@ -80,11 +80,39 @@ const Home = () => {
                 alt="..."
               />
               <div className="card-img-overlay">
-                <h5 className="card-title fw-bolder fs-1 text-warning"> Biryani</h5>
+                <h5 className="card-title fw-bolder fs-1 text-warning">
+                  {" "}
+                  Biryani
+                </h5>
                 <p className="card-text">
-                Biryani is a popular South Asian rice dish that is made with fragrant basmati rice, a variety of spices, and meat or vegetables.
+                  Biryani is a popular South Asian rice dish that is made with
+                  fragrant basmati rice, a variety of spices, and meat or
+                  vegetables.
                 </p>
-                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* chef section */}
+
+      {/* APP download section start here */}
+      <div className="bg-danger">
+        <div className="container py-5">
+          <div className="row">
+            <div className="col-md-6">
+              <img
+                className="img-fluid"
+                src="https://dilicious-demo.pbminfotech.com/burger/wp-content/uploads/sites/3/2023/02/burger-app.png"
+                alt=""
+              />
+            </div>
+            <div className="col-md-6 pt-4">
+              <h2 className="text-white fw-bold">Best App For Foods Ordering Now!</h2>
+              <p className="text-light">From signature delights such as beef tartare and the best mashed potato in Paris, all the way to unique specialties such as thinly</p>
+              <div>
+                <img className="img-fluid" src="https://i.ibb.co/Qf26Q09/Daco-4108569.png" alt="" />
               </div>
             </div>
           </div>
