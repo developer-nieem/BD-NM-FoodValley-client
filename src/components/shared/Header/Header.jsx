@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 const Header = () => {
+  const user =  useContext(AuthContext);
+  console.log(user);
   return (
     <div className="bg-light">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">

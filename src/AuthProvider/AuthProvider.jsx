@@ -1,11 +1,19 @@
 import React, { createContext } from 'react';
 
 export const AuthContext = createContext(null);
-const AuthProvider = () => {
+const AuthProvider = ({children}) => {
+
+    const name = 'nieem'
+
+    const authInfo ={
+        name,
+    }
     return (
-        <div>
-            
-        </div>
+        
+            <AuthContext.Provider value={authInfo}>
+            {children}
+            </AuthContext.Provider>
+        
     );
 };
 
