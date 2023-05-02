@@ -17,6 +17,7 @@ const Login = () => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
+            required
           />
          
         </div>
@@ -29,6 +30,7 @@ const Login = () => {
             className="form-control"
             id="exampleInputPassword1"
             name="password"
+            required
           />
         </div>
 

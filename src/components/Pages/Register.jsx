@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
+
+    const {createUser, userProfile} = useContext(AuthContext);
+
+    const registerHandler= event =>{
+        event.preventDefault();
+
+        const form =  event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const pass = form.password.value;
+        console.log(name, photo, email,pass );
+        form.reset()
+        createUser(email, pass)
+        .then(result =>{
+            const user =  result.user;
+            console.log(user);
+            
+            userProfile(name, photo)
+            .then(()=>{})
+            .catch(error=>{
+                console.log(error.message);
+            })
+        })
+        .catch(error=>{
+            console.log(error.message);
+        })
+    }
     return (
         <div className="w-25 mx-auto ">
       <div className="card p-4 my-5">
-      <form >
+      <form  onSubmit={registerHandler}>
         <div className="mb-3">
           <label for="exampleInputEmail1" className="form-label">
             Name
@@ -42,6 +71,7 @@ const Register = () => {
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             name="email"
+            required
           />
          
         </div>
@@ -54,6 +84,7 @@ const Register = () => {
             className="form-control"
             id="exampleInputPassword1"
             name="password"
+            required
           />
         </div>
 
