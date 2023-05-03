@@ -1,5 +1,6 @@
 import React from "react";
 import Chef from "../ChefDetails/Chef";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
             </div>
             <div className="col-md-8">
               <div className="text-end">
-                <img
+                <LazyLoadImage effect="opacity"
                   className="img-fluid mt-5"
                   src="https://dilicious-demo.pbminfotech.com/burger/wp-content/uploads/sites/3/2023/03/burger-01.png"
                   alt=""
@@ -35,7 +36,7 @@ const Home = () => {
         <div className="row">
           <div className="col-md-4">
             <div className="card text-bg-dark my-2">
-              <img
+              <LazyLoadImage effect="blur"
                 style={{ height: "300px" }}
                 src="https://images.unsplash.com/photo-1559528896-c5310744cce8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
                 className="card-img img-fluid"
@@ -54,7 +55,7 @@ const Home = () => {
           </div>
           <div className="col-md-4">
             <div className="card text-bg-dark my-2">
-              <img
+              <LazyLoadImage effect="blur"
                 style={{ height: "300px" }}
                 src="https://media.istockphoto.com/id/1316673633/photo/close-up-of-hamburger-with-black-background.jpg?b=1&s=170667a&w=0&k=20&c=pC6M4JiM1Q6arp7f0Uppwp5BNootDzPpJwoIwp98s5I="
                 className="card-img"
@@ -74,7 +75,7 @@ const Home = () => {
           </div>
           <div className="col-md-4">
             <div className="card text-bg-dark my-2">
-              <img
+              <LazyLoadImage effect="blur"
                 style={{ height: "300px" }}
                 src="https://images.unsplash.com/photo-1578160112054-954a67602b88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
                 className="card-img"

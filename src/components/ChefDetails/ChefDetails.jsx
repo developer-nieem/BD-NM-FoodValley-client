@@ -2,6 +2,7 @@ import React from "react";
 import { FaCalendarAlt, FaHamburger, FaThumbsUp, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import LazyLoad from 'react-lazy-load';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ChefDetails = ({ chefItem }) => {
     const {id, chef_picture, chef_name, years_of_experience, num_of_recipes, likes} = chefItem
@@ -9,9 +10,9 @@ const ChefDetails = ({ chefItem }) => {
     <>
       <div className="col">
         <div className="card h-100">
-          <LazyLoad height={250} offset={100} >
-          <img src={chef_picture} className="card-img-top " alt="..." style={{height:'250px'}} />
-          </LazyLoad>
+          
+          <LazyLoadImage effect='blur' src={chef_picture} className="card-img-top " alt="..." height='250px' />
+        
           <div className="card-body">
             <h5 className="card-title">Name: {chef_name}</h5>
             <p className="pt-2">
