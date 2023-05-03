@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { FaUser } from "react-icons/fa";
 const Header = () => {
   const {user, logOut} =  useContext(AuthContext);
   console.log(user);
@@ -46,10 +47,10 @@ const Header = () => {
             <div>
               {
                 user ? <>  <img  data-tooltip-id="my-tooltip"
-                data-tooltip-content={user.displayName ? user.displayName: "No Name"}
+                data-tooltip-content={user.displayName ? user.displayName: ""}
                 style={{ width: "44px", height: "44px" }}
                 className="rounded-circle"
-                src={user.photoURL ? user.photoURL : 'https://images.unsplash.com/photo-1584999734482-0361aecad844?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'}
+                src={user.photoURL ? user.photoURL : 'https://cdn-icons-png.flaticon.com/512/666/666201.png'}
                 alt=""
               />
               <Tooltip id="my-tooltip" /> <button onClick={logOutHandler} className="btn btn-primary">Log Out</button> </> : <Link to='/login' className="btn btn-info ms-2">LogIn</Link>
